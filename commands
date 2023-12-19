@@ -9,7 +9,7 @@ case "$1" in
       cat<<help_content
         hello <app>, Says "Hello, <app>"
         hello:world, Says "Hello world"
-      help_content
+help_content
     }
 
     if [[ $1 = "hello:help" ]] ; then
