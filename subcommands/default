@@ -5,7 +5,7 @@ source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
 
 cmd-hello-default() {
   declare desc="prints Hello \$APP"
-  declare cmd="hello"
+  declare cmd="example-plugin"
 
   [[ "$1" == "$cmd" ]] && shift 1
   # Support --app/$DOKKU_APP_NAME flag
