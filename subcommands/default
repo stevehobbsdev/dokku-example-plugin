@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+set -eo pipefail
+[[ $DOKKU_TRACE ]] && set -x
+source "$PLUGIN_CORE_AVAILABLE_PATH/common/functions"
+
+cmd-hello-default() {
+  declare desc="prints Hello \$APP"
+  declare cmd="hello"
+
+  [[ "$1" == "$cmd" ]] && shift 1
+  # Support --app/$DOKKU_APP_NAME flag
+  # Use the following lines to reorder args into "$cmd $DOKKU_APP_NAME $@""
+  [[ -n $DOKKU_APP_NAME ]] && set -- $DOKKU_APP_NAME $@
+  set -- $cmd $@
+  #
+  declare APP="$1"
+
+  [[ -z "$APP" ]] && dokku_log_fail "Please specify an app to run the command on"
+  verify_app_name "$APP"
+  
+  echo "Hello $APP!"
+}
+
+cmd-hello-default "$@"

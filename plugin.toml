@@ -1,0 +1,4 @@
+[plugin]
+description = "Example Dokku plugin"
+version = "0.1.0"
+[plugin.config]
