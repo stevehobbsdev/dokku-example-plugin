@@ -7,8 +7,8 @@ case "$1" in
     help_content_func() {
       declare desc="return help_content string"
       cat<<help_content
-  hello <app>, Says "Hello <app>"
-  hello:world, Says "Hello world"
+    hello <app>, Says "Hello <app>"
+    hello:world, Says "Hello world"
 help_content
     }
 
