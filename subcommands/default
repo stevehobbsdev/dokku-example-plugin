@@ -13,7 +13,7 @@ cmd-hello-default() {
   [[ -n $DOKKU_APP_NAME ]] && set -- $DOKKU_APP_NAME $@
   set -- $cmd $@
   #
-  declare APP="$1"
+  declare APP="$2"
 
   [[ -z "$APP" ]] && dokku_log_fail "Please specify an app to run the command on"
   verify_app_name "$APP"
